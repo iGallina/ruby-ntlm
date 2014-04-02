@@ -6,7 +6,7 @@ class Mechanize
     class AuthHeaders
 
       unless method_defined?(:handle_without_ntlm)
-        alias handle_without_ntlm handle
+        alias_method(handle_without_ntlm, handle)
       end
 
       def handle(ctx, params)
